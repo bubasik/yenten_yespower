@@ -137,7 +137,6 @@ libbitcoin_common_a_SOURCES = \
   hash/yespower/sysendian.h \
   hash/yespower/yespower-platform_c.h \
   hash/yespower/yespower-opt.c \
-  hash/yespower/yespower-ref.c \
   key.cpp \
   netbase.cpp \
   protocol.cpp \
