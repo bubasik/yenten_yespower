@@ -1,5 +1,6 @@
 /*-
- * Copyright 2018 Cryply team
+* Copyright 2019 Yenten team
+* Copyright 2018 Cryply team
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,18 +26,19 @@
  *
  * This file was originally written by Cryply team as part of the Cryply
  * coin.
+ * Modification yespower Cryply algo to yespower Yenten (yespowerr16 n=4096, r=16)
  */
 #include "yespower.h"
 #include "sysendian.h"
 
 static const yespower_params_t v1 = {YESPOWER_0_5, 4096, 16, "Client Key", 10};
 
-static const yespower_params_t v2 = {YESPOWER_0_9, 2048, 32, NULL, 0};
+static const yespower_params_t v2 = {YESPOWER_0_9, 4096, 16, NULL, 0};
 
 int yespower_hash(const char *input, char *output)
 {
     uint32_t time = le32dec(&input[68]);
-    if (time > 1530403200) {
+    if (time > 1549442000) {
         return yespower_tls(input, 80, &v1, (yespower_binary_t *) output);
     } else {
         return yespower_tls(input, 80, &v1, (yespower_binary_t *) output);
